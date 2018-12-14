@@ -21,6 +21,9 @@
     <ClCompile Include="zad2C.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="zad3C.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <MASM Include="zad1A.asm">
