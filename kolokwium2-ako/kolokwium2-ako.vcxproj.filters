@@ -29,5 +29,8 @@
     <MASM Include="zad2A.asm">
       <Filter>Source Files</Filter>
     </MASM>
+    <MASM Include="zad3A.asm">
+      <Filter>Source Files</Filter>
+    </MASM>
   </ItemGroup>
 </Project>
