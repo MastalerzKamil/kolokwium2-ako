@@ -23,6 +23,7 @@ iteruj:
 	push ecx ; zapamietaj iterator z zewnetrznej petli
 porownuj:
 	inc ecx
+	adc ecx, 0
 	cmp ecx, rozmiar	; koniec petli wewnetrznej
 	jz po_porownaniu
 	mov ebx, [esi+4*ecx]
