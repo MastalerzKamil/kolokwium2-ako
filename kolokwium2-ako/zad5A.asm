@@ -13,19 +13,22 @@ _szyfruj PROC
 	push ebx
 	push edi
 	push esi
+	push edx
+	push ecx
 
 	mov esi, [ebp+8]	; *tekst
 
 	mov al, 0	; do porownania czy koniec tekstu
 	cld
+	mov ecx, 0
 	mov edi, esi
 ptl:
-	lodsb	; zaladuj kolejny znak do AL
+	mov al, [esi+ecx]	; zaladuj kolejny znak do AL
 	cmp al, 0
 	jz koniec
 	mov ebx, klucz
 	xor al, bl	; szyfrowanie bajtu z tekstu zrodlowegop
-	stosb	; przeslij wynik szyfrowania a nastepnie zwieksz adres
+	mov [esi+ecx], al	; przeslij wynik szyfrowania a nastepnie zwieksz adres
 szyfruj:
 ; nie musze zapamietywac eax ze wzgledu na to, ze najpierw 
 ; przesylam AL do [esi] a potem szyfruje
@@ -38,9 +41,10 @@ szyfruj:
 	div dzielnik	; ah = reszta dzielenia bitow przez 2
 
 	add klucz, eax	; dodanie reszty z klucza szyfrujacaego <=> uzupelnienie przesunietego bitu)
-	; mov klucz, ebx
+	inc ecx
 	jmp ptl
 koniec:
+	pop ecx
 	pop edx
 	pop esi
 	pop edi
