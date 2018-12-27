@@ -126,6 +126,7 @@
     <ClCompile Include="zad4C.c" />
     <ClCompile Include="zad5C.c" />
     <ClCompile Include="zad6C.c" />
+    <ClCompile Include="zad7C.c" />
   </ItemGroup>
   <ItemGroup>
     <MASM Include="zad1A.asm" />
@@ -134,6 +135,7 @@
     <MASM Include="zad4A.asm" />
     <MASM Include="zad5A.asm" />
     <MASM Include="zad6A.asm" />
+    <MASM Include="zad7A.asm" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
