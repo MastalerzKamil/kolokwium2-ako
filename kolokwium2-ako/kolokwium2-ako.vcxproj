@@ -129,6 +129,7 @@
     <ClCompile Include="zad7C.c" />
   </ItemGroup>
   <ItemGroup>
+    <MASM Include="zad14A.asm" />
     <MASM Include="zad1A.asm" />
     <MASM Include="zad2A.asm" />
     <MASM Include="zad3A.asm" />
