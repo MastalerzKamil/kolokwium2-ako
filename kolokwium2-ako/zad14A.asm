@@ -1,6 +1,6 @@
 .686
 .model flat
-public _main
+;public _main
 extern _ExitProcess@4 : PROC
 
 .data
@@ -10,7 +10,7 @@ double_wykladnik	dw 0
 znak				dw 0
 liczba_double		dw 4 dup (?)
 .code
-_main PROC
+; _main PROC
 	mov esi, offset test_float
 	mov edi, offset liczba_double
 	mov edx, [esi]
@@ -40,5 +40,5 @@ dodatnia:
 	mov [edi+6], ax
 	push 0
 	call _ExitProcess@4
-_main ENDP
+;_main ENDP
 END
