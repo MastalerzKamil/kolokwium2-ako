@@ -132,6 +132,7 @@
   <ItemGroup>
     <MASM Include="zad14A.asm" />
     <MASM Include="zad15A.asm" />
+    <MASM Include="zad16A.asm" />
     <MASM Include="zad1A.asm" />
     <MASM Include="zad2A.asm" />
     <MASM Include="zad3A.asm" />

@@ -68,5 +68,8 @@
     <MASM Include="zad15A.asm">
       <Filter>Source Files</Filter>
     </MASM>
+    <MASM Include="zad16A.asm">
+      <Filter>Source Files</Filter>
+    </MASM>
   </ItemGroup>
 </Project>
