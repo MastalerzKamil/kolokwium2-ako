@@ -24,7 +24,8 @@ mnoz_wagi:	; Sum from i=0 to n waga(i)*tablica(i)
 ; st(0)=wagi	st(1)=tablica	st(2)=wynik
 	fmulp st(1), st(0)
 ; st(0)=wagi*tablica	st(1)=wynik
-	faddp st(1), st(0)
+	fadd st(1), st(0)
+	fstp st(0)
 	inc ecx
 	cmp ecx, ebx
 	jnz mnoz_wagi
@@ -41,6 +42,7 @@ dodawaj_wagi:
 
 	pop ecx
 	pop edi
+	pop esi
 	pop ebx
 	pop ebp
 	ret
