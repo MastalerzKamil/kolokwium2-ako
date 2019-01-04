@@ -15,10 +15,10 @@ _NWD PROC
 	mov edi, [ebp+12]	; b
 
 	cmp esi, edi
-	jz koniec
+	jz rowne
 
 	cmp esi, edi
-	ja zmniejsz_a
+	ja wieksze_a
 
 	sub edi, esi
 	push edi
@@ -26,15 +26,16 @@ _NWD PROC
 	call _NWD
 	add esp, 8	; zwalnianie pamieci zgodnie ze standardem C
 	jmp koniec
-zmniejsz_a:
+wieksze_a:
 	sub esi, edi
 	push edi
 	push esi
 	call _NWD
 	add esp, 8
-
-koniec:
+	jmp koniec
+rowne:
 	mov eax, esi	; wyn=a
+koniec:
 	pop ebx
 	pop edi
 	pop esi
