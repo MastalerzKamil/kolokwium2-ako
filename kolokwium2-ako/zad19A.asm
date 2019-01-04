@@ -25,8 +25,13 @@ szukaj_niejawnej_jedynki:
 	jz niejawna_na_miejscu
 	jb niejawna_jedynka_lewo	; w tym przypadku niejawna jedynka w MIESZ32 znajduje sie w czesci calkowitej
 ;teraz przypadek gdy niejawna jedynka znajduje sie w czesci ulamkowej
-	sub ecx, 23
-	shl ebx, cl
+	push eax
+; wyliczenie znormalizowanego wykladnika dla liczby z niejawna jedynka w czesci ulamkowej
+	mov eax, 127
+	sub ecx, 23	; obliczenie przesuniecia
+	sub eax, ecx
+	xchg eax, ecx
+	pop eax
 	jmp koniec
 niejawna_jedynka_lewo:
 	push eax	; zapamietaj eax tymczasowo
@@ -34,7 +39,7 @@ niejawna_jedynka_lewo:
 	sub eax, ecx	; eax = 23-miejsce_pierwszej_jedynki
 	xchg eax, ecx
 	pop eax
-	shl ebx, cl
+	add ecx, 127	; normailzacja wykladnika
 	jmp koniec
 niejawna_na_miejscu:
 ; obliczanie wartosci wykladnika
@@ -43,11 +48,11 @@ niejawna_na_miejscu:
 	sub eax, ecx	; wyliczeie przesuniecia na podstawie pozycji znalezionej jedynki
 	xchg ecx, eax
 	pop eax
-koniec:
-	mov ebx, [ebp+8]
-	shr ebx, 8	; zrob miejesce na wykladnik (bez miejsca na znak)
-	shl ebx, 23 ; przesun ebx do poczatku mantysy
 	add ecx, 127	; normailzacja wykladnika
+koniec:
+	;mov ebx, [ebp+8]
+	shr ebx, 8	; zrob miejesce na wykladnik (bez miejsca na znak)
+	;shl ebx, 23 ; przesun ebx do poczatku mantysy
  	shl ecx, 24	; przesun znormalizowany wykladnik do bitu mlodszego niz znak
 	or ebx, ecx	; zalozenie - liczba bez znaku
 	shr ebx, 1	; zrob miejsce na znak. Zalozenie liczba bez znaku
