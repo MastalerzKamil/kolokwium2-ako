@@ -48,6 +48,9 @@
     <ClCompile Include="zad18C.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="zad19C.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <MASM Include="zad1A.asm">
@@ -87,6 +90,9 @@
       <Filter>Source Files</Filter>
     </MASM>
     <MASM Include="zad18A.asm">
+      <Filter>Source Files</Filter>
+    </MASM>
+    <MASM Include="zad19A.asm">
       <Filter>Source Files</Filter>
     </MASM>
   </ItemGroup>
