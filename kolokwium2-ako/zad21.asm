@@ -41,18 +41,22 @@ _float_razy_float PROC
 	mov edx, 0
 	mov eax, esi	; iloczyn do eax
 	mul edi	; pomnoz mantysy. Wynik w EDX:EAX
+	bt edx, 15 ;sprawdzenie czy wynik jest wiekszy lub rowny 2
+	jnc wieksza_od_2
 
+wieksza_od_2:
 	push edx
 	shr eax, 23	; przesun w celu zminimalizowania do rozmiaru float (32-bitow)
-	shl edx, 8	; zostawiam miejsce na bit znaku
+	shl edx, 9	; zostawiam miejsce na bit znaku
 	or eax, edx
 	pop edx
+	and eax, 007FFFFFh
 
 	pop ebx	; zdejmij wykladnik wynikowy
 	shl ebx, 23	; przesun wykladnik na jego miejsce (przed bitem znaku)
 
 	or eax, ebx
-; czas na  bit znaku
+; ustawianie bitu znaku
 	mov esi, [ebp+8]
 	mov edi, [ebp+12]
 	shl esi, 31
