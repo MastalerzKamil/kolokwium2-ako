@@ -2,7 +2,6 @@
 .model flat
 extern _GetSystemInfo@4 : PROC
 extern _malloc : PROC
-extern _free : PROC
 public _liczba_procesorow
 
 .data
