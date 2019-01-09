@@ -128,6 +128,7 @@
     <ClCompile Include="zad1C.c" />
     <ClCompile Include="zad20C.c" />
     <ClCompile Include="zad21C.c" />
+    <ClCompile Include="zad22C.c" />
     <ClCompile Include="zad2C.c" />
     <ClCompile Include="zad3C.c" />
     <ClCompile Include="zad4C.c" />
@@ -146,6 +147,7 @@
     <MASM Include="zad1A.asm" />
     <MASM Include="zad20A.asm" />
     <MASM Include="zad21.asm" />
+    <MASM Include="zad22A.asm" />
     <MASM Include="zad2A.asm" />
     <MASM Include="zad3A.asm" />
     <MASM Include="zad4A.asm" />
