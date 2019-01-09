@@ -72,6 +72,7 @@ zamien_miejsca:
 	pop esi
 	jmp dalej
 znajdz_max:
+; zalozenie, ze ostatnia liczba to max
 	dec ecx	; zmniejsz w celu nie wyjscia poza zakres tablicy
 	mov eax, [esi+8*ecx]	; mlodsza czesc maxa
 	mov edx, [esi+8*ecx+4]	; starsza czesc maxa
